@@ -1,0 +1,19 @@
+{
+  "name": "videosync-openapi-client",
+  "version": "1.0.0",
+  "description": "Generated javascript-axios client for videosync",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flikmediagroup/videosync-openapi-client.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/flikmediagroup/videosync-openapi-client/issues"
+  },
+  "homepage": "https://github.com/flikmediagroup/videosync-openapi-client#readme"
+}

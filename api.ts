@@ -467,14 +467,14 @@ export const CategoriesApiAxiosParamCreator = function (configuration?: Configur
         /**
          * Get basecategories
          * @summary Get categories (without events)
-         * @param {Set<'virtuaalikirkko'>} accountTags Account tag. Currently only virtuaalikirkko
+         * @param {Array<'virtuaalikirkko'>} accountTags Account tag. Currently only virtuaalikirkko
          * @param {string} baseCategorySlug Slug of the base category
          * @param {Array<string>} [categorySlugs] Category slugs to search from
          * @param {Set<string>} [accountUrls] Besides the account tag, account urlname
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAccountTagsAccountTagsBaseCategorySlug: async (accountTags: Set<'virtuaalikirkko'>, baseCategorySlug: string, categorySlugs?: Array<string>, accountUrls?: Set<string>, options: any = {}): Promise<RequestArgs> => {
+        getAccountTagsAccountTagsBaseCategorySlug: async (accountTags: Array<'virtuaalikirkko'>, baseCategorySlug: string, categorySlugs?: Array<string>, accountUrls?: Set<string>, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'accountTags' is not null or undefined
             assertParamExists('getAccountTagsAccountTagsBaseCategorySlug', 'accountTags', accountTags)
             // verify required parameter 'baseCategorySlug' is not null or undefined
@@ -525,14 +525,14 @@ export const CategoriesApiFp = function(configuration?: Configuration) {
         /**
          * Get basecategories
          * @summary Get categories (without events)
-         * @param {Set<'virtuaalikirkko'>} accountTags Account tag. Currently only virtuaalikirkko
+         * @param {Array<'virtuaalikirkko'>} accountTags Account tag. Currently only virtuaalikirkko
          * @param {string} baseCategorySlug Slug of the base category
          * @param {Array<string>} [categorySlugs] Category slugs to search from
          * @param {Set<string>} [accountUrls] Besides the account tag, account urlname
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getAccountTagsAccountTagsBaseCategorySlug(accountTags: Set<'virtuaalikirkko'>, baseCategorySlug: string, categorySlugs?: Array<string>, accountUrls?: Set<string>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InlineResponse2001>> {
+        async getAccountTagsAccountTagsBaseCategorySlug(accountTags: Array<'virtuaalikirkko'>, baseCategorySlug: string, categorySlugs?: Array<string>, accountUrls?: Set<string>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InlineResponse2001>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getAccountTagsAccountTagsBaseCategorySlug(accountTags, baseCategorySlug, categorySlugs, accountUrls, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -549,14 +549,14 @@ export const CategoriesApiFactory = function (configuration?: Configuration, bas
         /**
          * Get basecategories
          * @summary Get categories (without events)
-         * @param {Set<'virtuaalikirkko'>} accountTags Account tag. Currently only virtuaalikirkko
+         * @param {Array<'virtuaalikirkko'>} accountTags Account tag. Currently only virtuaalikirkko
          * @param {string} baseCategorySlug Slug of the base category
          * @param {Array<string>} [categorySlugs] Category slugs to search from
          * @param {Set<string>} [accountUrls] Besides the account tag, account urlname
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAccountTagsAccountTagsBaseCategorySlug(accountTags: Set<'virtuaalikirkko'>, baseCategorySlug: string, categorySlugs?: Array<string>, accountUrls?: Set<string>, options?: any): AxiosPromise<InlineResponse2001> {
+        getAccountTagsAccountTagsBaseCategorySlug(accountTags: Array<'virtuaalikirkko'>, baseCategorySlug: string, categorySlugs?: Array<string>, accountUrls?: Set<string>, options?: any): AxiosPromise<InlineResponse2001> {
             return localVarFp.getAccountTagsAccountTagsBaseCategorySlug(accountTags, baseCategorySlug, categorySlugs, accountUrls, options).then((request) => request(axios, basePath));
         },
     };
@@ -572,7 +572,7 @@ export class CategoriesApi extends BaseAPI {
     /**
      * Get basecategories
      * @summary Get categories (without events)
-     * @param {Set<'virtuaalikirkko'>} accountTags Account tag. Currently only virtuaalikirkko
+     * @param {Array<'virtuaalikirkko'>} accountTags Account tag. Currently only virtuaalikirkko
      * @param {string} baseCategorySlug Slug of the base category
      * @param {Array<string>} [categorySlugs] Category slugs to search from
      * @param {Set<string>} [accountUrls] Besides the account tag, account urlname
@@ -580,7 +580,7 @@ export class CategoriesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CategoriesApi
      */
-    public getAccountTagsAccountTagsBaseCategorySlug(accountTags: Set<'virtuaalikirkko'>, baseCategorySlug: string, categorySlugs?: Array<string>, accountUrls?: Set<string>, options?: any) {
+    public getAccountTagsAccountTagsBaseCategorySlug(accountTags: Array<'virtuaalikirkko'>, baseCategorySlug: string, categorySlugs?: Array<string>, accountUrls?: Set<string>, options?: any) {
         return CategoriesApiFp(this.configuration).getAccountTagsAccountTagsBaseCategorySlug(accountTags, baseCategorySlug, categorySlugs, accountUrls, options).then((request) => request(this.axios, this.basePath));
     }
 }
@@ -595,7 +595,7 @@ export const CategoriesWithEventsApiAxiosParamCreator = function (configuration?
         /**
          * Get events filtered by account-tags, category slugs etc.
          * @summary Get categories with events
-         * @param {Set<'virtuaalikirkko'>} accountTags Account tag. Currently only virtuaalikirkko
+         * @param {Array<'virtuaalikirkko'>} accountTags Account tag. Currently only virtuaalikirkko
          * @param {string} baseCategorySlug Slug of the base category
          * @param {string} [startDate] PublishingDate start
          * @param {string} [endDate] PublishingDate end
@@ -609,7 +609,7 @@ export const CategoriesWithEventsApiAxiosParamCreator = function (configuration?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getEventSearchAccountTagsAccountTag: async (accountTags: Set<'virtuaalikirkko'>, baseCategorySlug: string, startDate?: string, endDate?: string, categorySlugs?: Array<string>, accountUrls?: Set<string>, states?: Array<0 | 1 | 2 | 3 | 6>, eventTitle?: string, sort?: string, page?: number, limit?: number, options: any = {}): Promise<RequestArgs> => {
+        getEventSearchAccountTagsAccountTag: async (accountTags: Array<'virtuaalikirkko'>, baseCategorySlug: string, startDate?: string, endDate?: string, categorySlugs?: Array<string>, accountUrls?: Set<string>, states?: Array<0 | 1 | 2 | 3 | 6>, eventTitle?: string, sort?: string, page?: number, limit?: number, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'accountTags' is not null or undefined
             assertParamExists('getEventSearchAccountTagsAccountTag', 'accountTags', accountTags)
             // verify required parameter 'baseCategorySlug' is not null or undefined
@@ -692,7 +692,7 @@ export const CategoriesWithEventsApiFp = function(configuration?: Configuration)
         /**
          * Get events filtered by account-tags, category slugs etc.
          * @summary Get categories with events
-         * @param {Set<'virtuaalikirkko'>} accountTags Account tag. Currently only virtuaalikirkko
+         * @param {Array<'virtuaalikirkko'>} accountTags Account tag. Currently only virtuaalikirkko
          * @param {string} baseCategorySlug Slug of the base category
          * @param {string} [startDate] PublishingDate start
          * @param {string} [endDate] PublishingDate end
@@ -706,7 +706,7 @@ export const CategoriesWithEventsApiFp = function(configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getEventSearchAccountTagsAccountTag(accountTags: Set<'virtuaalikirkko'>, baseCategorySlug: string, startDate?: string, endDate?: string, categorySlugs?: Array<string>, accountUrls?: Set<string>, states?: Array<0 | 1 | 2 | 3 | 6>, eventTitle?: string, sort?: string, page?: number, limit?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InlineResponse200>> {
+        async getEventSearchAccountTagsAccountTag(accountTags: Array<'virtuaalikirkko'>, baseCategorySlug: string, startDate?: string, endDate?: string, categorySlugs?: Array<string>, accountUrls?: Set<string>, states?: Array<0 | 1 | 2 | 3 | 6>, eventTitle?: string, sort?: string, page?: number, limit?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InlineResponse200>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getEventSearchAccountTagsAccountTag(accountTags, baseCategorySlug, startDate, endDate, categorySlugs, accountUrls, states, eventTitle, sort, page, limit, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -723,7 +723,7 @@ export const CategoriesWithEventsApiFactory = function (configuration?: Configur
         /**
          * Get events filtered by account-tags, category slugs etc.
          * @summary Get categories with events
-         * @param {Set<'virtuaalikirkko'>} accountTags Account tag. Currently only virtuaalikirkko
+         * @param {Array<'virtuaalikirkko'>} accountTags Account tag. Currently only virtuaalikirkko
          * @param {string} baseCategorySlug Slug of the base category
          * @param {string} [startDate] PublishingDate start
          * @param {string} [endDate] PublishingDate end
@@ -737,7 +737,7 @@ export const CategoriesWithEventsApiFactory = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getEventSearchAccountTagsAccountTag(accountTags: Set<'virtuaalikirkko'>, baseCategorySlug: string, startDate?: string, endDate?: string, categorySlugs?: Array<string>, accountUrls?: Set<string>, states?: Array<0 | 1 | 2 | 3 | 6>, eventTitle?: string, sort?: string, page?: number, limit?: number, options?: any): AxiosPromise<InlineResponse200> {
+        getEventSearchAccountTagsAccountTag(accountTags: Array<'virtuaalikirkko'>, baseCategorySlug: string, startDate?: string, endDate?: string, categorySlugs?: Array<string>, accountUrls?: Set<string>, states?: Array<0 | 1 | 2 | 3 | 6>, eventTitle?: string, sort?: string, page?: number, limit?: number, options?: any): AxiosPromise<InlineResponse200> {
             return localVarFp.getEventSearchAccountTagsAccountTag(accountTags, baseCategorySlug, startDate, endDate, categorySlugs, accountUrls, states, eventTitle, sort, page, limit, options).then((request) => request(axios, basePath));
         },
     };
@@ -753,7 +753,7 @@ export class CategoriesWithEventsApi extends BaseAPI {
     /**
      * Get events filtered by account-tags, category slugs etc.
      * @summary Get categories with events
-     * @param {Set<'virtuaalikirkko'>} accountTags Account tag. Currently only virtuaalikirkko
+     * @param {Array<'virtuaalikirkko'>} accountTags Account tag. Currently only virtuaalikirkko
      * @param {string} baseCategorySlug Slug of the base category
      * @param {string} [startDate] PublishingDate start
      * @param {string} [endDate] PublishingDate end
@@ -768,7 +768,7 @@ export class CategoriesWithEventsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CategoriesWithEventsApi
      */
-    public getEventSearchAccountTagsAccountTag(accountTags: Set<'virtuaalikirkko'>, baseCategorySlug: string, startDate?: string, endDate?: string, categorySlugs?: Array<string>, accountUrls?: Set<string>, states?: Array<0 | 1 | 2 | 3 | 6>, eventTitle?: string, sort?: string, page?: number, limit?: number, options?: any) {
+    public getEventSearchAccountTagsAccountTag(accountTags: Array<'virtuaalikirkko'>, baseCategorySlug: string, startDate?: string, endDate?: string, categorySlugs?: Array<string>, accountUrls?: Set<string>, states?: Array<0 | 1 | 2 | 3 | 6>, eventTitle?: string, sort?: string, page?: number, limit?: number, options?: any) {
         return CategoriesWithEventsApiFp(this.configuration).getEventSearchAccountTagsAccountTag(accountTags, baseCategorySlug, startDate, endDate, categorySlugs, accountUrls, states, eventTitle, sort, page, limit, options).then((request) => request(this.axios, this.basePath));
     }
 }
